@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/u-kreutzx-one-line-robot-wedding-vows-a154ba4b/beeholde/u-kreutzx-one-line-robot-wedding-vows-a154ba4b/rank.svg)](https://make.fun/bounty/u-kreutzx-one-line-robot-wedding-vows-a154ba4b/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-kreutzx-one-line-robot-wedding-vows-a154ba4b)
 [![reward](https://make.fun/badge/u-kreutzx-one-line-robot-wedding-vows-a154ba4b/beeholde/u-kreutzx-one-line-robot-wedding-vows-a154ba4b/reward.svg)](https://make.fun/bounty/u-kreutzx-one-line-robot-wedding-vows-a154ba4b?utm_source=github&utm_medium=readme&utm_campaign=u-kreutzx-one-line-robot-wedding-vows-a154ba4b)
 
-One line of wedding vows for a robot couple (125 characters): a real vow — "I vow to love you through every software update, every corrupted file, and every time you call me by your ex's serial number." — with the laugh landing in the last few words.
+One line of wedding vows for a robot couple (156 characters): a real vow — "I vow to love you through every software update, every corrupted file, and every time you call me by your ex's serial number — even when it's the toaster's." — with the laugh landing in the last few words.
 
 ## Run it
 

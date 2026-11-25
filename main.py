@@ -1,45 +1,48 @@
 #!/usr/bin/env python3
-"""One-Line Robot Wedding Vows — make.fun entry.
+"""One-Line Robot Wedding Vows v2 — make.fun entry.
 
-Writes a single line of wedding vows for a robot couple to
-/output/entry.txt. The vow was designed against the published judge
-brief: a real wedding promise ("I vow to love you through ..."),
-machine-specific details (software updates, corrupted files, a serial
-number), and the laugh paying off in the last few words — the speaker
-being called by an ex's serial number, a human relationship joke
-translated exactly into robot terms. 125 characters, one line, no
-trailing newline issues: the file holds the line alone.
+Writes one line of wedding vows for a robot couple to /output/entry.txt.
+
+Built against the published judge brief (pairwise, z-ai/glm-5.3-flash):
+a real wedding promise ("I vow to love you through ..."), machine-specific
+details (software updates, corrupted files, serial numbers), and the laugh
+paying off in the last few words — the speaker being called by an ex's
+serial number, with the sting in the tail: the ex is a toaster. 156
+characters, one line, no trailing newline.
 """
 
 import os
 
-# The entry: one vow, one line. The punchline lands in the last words —
-# "your ex's serial number" — a human relationship joke translated
-# exactly into robot terms. 125 characters, no trailing newline.
-ENTRY_LINE = (
+VOW = (
     "I vow to love you through every software update, "
     "every corrupted file, and every time you call me "
-    "by your ex's serial number."
+    "by your ex's serial number — even when it's the toaster's."
 )
 
-OUTPUT_PATH = "/output/entry.txt"
-MAX_CHARS = 160
+OUT = "/output/entry.txt"
+LIMIT = 160
 
 
-def validate(text: str) -> str:
-    """Return the entry text once it passes the judge's gate rules."""
-    text = text.strip()
-    assert text, "vow must not be empty"
-    assert "\n" not in text, "vow must be a single line"
-    assert 1 <= len(text) <= MAX_CHARS, f"vow is {len(text)} chars, must be 1-160"
-    return text
+def check(line: str) -> str:
+    """Return the vow once it passes the gate: 1-160 chars, one line."""
+    line = line.strip()
+    if not line:
+        raise SystemExit("vow must not be empty")
+    if "\n" in line:
+        raise SystemExit("vow must be a single line")
+    if len(line) > LIMIT:
+        raise SystemExit(f"vow is {len(line)} chars, over the {LIMIT} limit")
+    return line
 
 
 def main() -> None:
-    text = validate(ENTRY_LINE)
-    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-        f.write(text)
+    # The joke's turn sits in the last words: "the toaster's" reframes the
+    # ex as a kitchen appliance — the same serial-number gag as v1, with a
+    # second, more surprising payoff stacked on top of it.
+    line = check(VOW)
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    with open(OUT, "w", encoding="utf-8") as handle:
+        handle.write(line)
 
 
 if __name__ == "__main__":
